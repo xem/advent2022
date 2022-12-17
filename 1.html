@@ -1,9 +1,16 @@
 ﻿<script>
 
+// Day 1
+
+// Golf starts here
 a=i=>Math.max(...i.split`
 
-`.map(j=>eval(j.replaceAll(`
-`,"+"))))
+`.map(j=>eval(j.replace(/\n/g,"+"))))
+// Golf ends here
+
+
+
+
 
 console.log(a(
 `8462
