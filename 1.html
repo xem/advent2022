@@ -9,9 +9,8 @@ a=i=>eval(`Math.max(${i.split`
 // Golf ends here
 
 // B: Golf starts here
-b=i=>eval(i.split`
-
-`.map(j=>eval(j.replace(/\n/g,"+"))).sort((a,b)=>b-a).slice(0,3).join`+`)
+b=i=>([A,B,C]=eval(`[${i.split`
+`.join`+`.split`++`}]`).sort((a,b)=>b-a),A+B+C)
 // Golf ends here
 
 
