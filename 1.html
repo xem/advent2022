@@ -3,19 +3,25 @@
 // Day 1
 // =====
 
-// Golf starts here
+// A: Golf starts here
 a=i=>Math.max(...i.split`
 
 `.map(j=>eval(j.replace(/\n/g,"+"))))
+// Golf ends here
+
+// B: Golf starts here
+b=i=>eval(i.split`
+
+`.map(j=>eval(j.replace(/\n/g,"+"))).sort((a,b)=>b-a).slice(0,3).join`+`)
 // Golf ends here
 
 
 // Test
 // ====
 
-// Expected value: 67633
-
-console.log(a(
+// A: Expected value: 67633
+// B: expected value: 199628
+i = 
 `8462
 6981
 3714
@@ -2252,6 +2258,9 @@ console.log(a(
 7720
 8262
 2666
-7147`));
+7147`
+
+console.log(a(i));
+console.log(b(i));
 
 </script>
