@@ -2,11 +2,54 @@
 
 // Day 2
 // =====
+/**
+ * The sum of all scores must be computed. The scores are given by:
+ *     | X | Y | Z
+ * --- | - | - | -
+ * A   | 4 | 8 | 3
+ * B   | 1 | 5 | 9
+ * C   | 7 | 2 | 6
+ * 
+ * Where A, B and C, and X, Y and Z represent Rock, Paper and Scissors respectively.
+ * 
+ * This 3x3 matrix can be rewritten as a 1x9 array:
+ * X = [4, 8, 3, 1, 5, 9, 7, 2, 6]
+ * 
+ * We need to map the letters to the array indices. This can be done by using charCodes:
+ * A = 65, B = 66, C = 67
+ * X = 88, Y = 89, Z = 90
+ * 
+ * The index for "x y" can be computed as:
+ * index(x,y) = 3*(x - 65) + (y - 88)
+ * 
+ * So, for example, the index for "A Y" is:
+ * index(65, 89) = 3*(65 - 65) + (89 - 88) = 3*0 + 1 = 1
+ * 
+ * And the value for "C X" is:
+ * index(67, 88) = 3*(67 - 65) + (88 - 88) = 3*2 + 0 = 6
+ * 
+ * This equation can be simplified to:
+ * index(x,y) = 3x + y - 283
+ **/
+
+
 
 // A: Golf starts here: 93b.
 a=i=>eval(i.split`
 `.map(x=>[4,8,3,1,5,9,7,2,6][x[c=`charCodeAt`](0)*3+x[c](2)-283]).join`+`)
 // Golf ends here
+
+
+/**
+ * The second part of the puzzle can be solved in a similar way. Only the matrix has changed:
+ *    | X | Y | Z
+ * ---|---|---|---
+ * A  | 3 | 4 | 8
+ * B  | 1 | 5 | 9
+ * C  | 2 | 6 | 7
+ * 
+ * The values of the matrix are the same as before, but the indices have changed. The first column corresponds to losing, the second to a draw and the third to winning.
+ **/
 
 // B: Golf starts here
 b=i=>eval(i.split`
