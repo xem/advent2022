@@ -36,7 +36,7 @@
 
 // A: Golf starts here: 90b.
 a=i=>i.split`
-`.reduce((s,x)=>s+[4,8,3,1,5,9,7,2,6][x[c=`charCodeAt`](0)*3+x[c](2)-283],0)
+`.reduce((s,x)=>+"483159726"[x[c=`charCodeAt`](0)*3+x[c](2)-283]+s,0)
 // Golf ends here
 
 
@@ -53,7 +53,7 @@ a=i=>i.split`
 
 // B: Golf starts here
 b=i=>i.split`
-`.reduce((s,x)=>s+[3,4,8,1,5,9,2,6,7][x[c=`charCodeAt`](0)*3+x[c](2)-283],0)
+`.reduce((s,x)=>+"348159267"[x[c=`charCodeAt`](0)*3+x[c](2)-283]+s,0)
 // Golf ends here
 
 
