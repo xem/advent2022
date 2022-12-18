@@ -3,10 +3,9 @@
 // Day 2
 // =====
 
-// A: Golf starts here: 103b.
-X={A:{X:4,Y:8,Z:3},B:{X:1,Y:5,Z:9},C:{X:7,Y:2,Z:6}}
+// A: Golf starts here: 97b.
 a=i=>eval(i.split`
-`.map(x=>X[x[0]][x[2]]).join`+`)
+`.map(x=>[4,8,3,1,5,9,7,2,6][(x[c=`charCodeAt`](0)-65)*3+x[c](2)-88]).join`+`)
 // Golf ends here
 
 // B: Golf starts here
