@@ -4,7 +4,9 @@
 // =====
 
 // A: Golf starts here
-a=i=>eval(i[r="replace"](/A X/g,4)[r](/A Y/g,8)[r](/A Z/g,3)[r](/B X/g,1)[r](/B Y/g,5)[r](/B Z/g,9)[r](/C X/g,7)[r](/C Y/g,2)[r](/C Z/g,6)[r](/\n/g,"+"))
+X= {A:{X:4,Y:8,Z:3},B:{X:1,Y:5,Z:9},C:{X:7,Y:2,Z:6}};
+a=i=>eval(i.split(`
+`).map(x=>X[x[0]][x[2]]).join("+"))
 // Golf ends here
 
 // B: Golf starts here
