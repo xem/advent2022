@@ -6,8 +6,9 @@
 /**
  * Find duplicate values in both compartiments. Bags are separated by a newline. Compartiments are half the size of the bag.
  * 
- * Idea: split the string in two equal parts. Find the intersection of the two arrays. Get the charCode of the first element of the intersection.
- * Charcodes map to the following values:
+ * Idea: split the string in two equal parts. Find the intersection of the two arrays by comparing the first half of the bag with the second half.
+ * 
+ * Then, get the charCode of the first element of the intersection and map the values:
  * A: 65    -> 27
  * Z: 90    -> 52
  * a: 97    -> 1
@@ -17,9 +18,9 @@
  * Then sum all the values.
  **/
 
-// A: Golf starts here: 128b
+// A: Golf starts here: 100b
 a=i=>i.split`
-`.reduce((a,b)=>a+(b.slice(0,l=b.length/2).split``.find(x=>b.slice(l).split``.includes(x)).charCodeAt(0)-38)%58,0)
+`.reduce((a,b)=>a+([...b].find(x=>b.lastIndexOf(x)>=b.length/2).charCodeAt()-38)%58,0)
 // Golf ends here
 
 // B: Golf starts here
