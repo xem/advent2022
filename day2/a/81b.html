@@ -27,36 +27,12 @@
  * a(x,y) = (y-x-1) % 3 * 3
  */
 
-
-
 // A: Golf starts here: 81b.
 a=i=>i.split`
 `.reduce((s,x)=>(x[c=`charCodeAt`](2)-x[c]()-1)%3*3+x[c](2)-87+s,0)
 // Golf ends here
 
-
-/**
- * The second part of the puzzle can be solved in a similar way. Only the matrix has changed:
- *    | X | Y | Z
- * ---|---|---|---
- * A  | 3 | 4 | 8
- * B  | 1 | 5 | 9
- * C  | 2 | 6 | 7
- * 
- * The values of the matrix are the same as before, but the indices have changed. The first column corresponds to losing, the second to a draw and the third to winning.
- **/
-
-// B: Golf starts here
-b=i=>i.split`
-`.reduce((s,x)=>+"348159267"[x[c=`charCodeAt`]()*3+x[c](2)-283]+s,0)
-// Golf ends here
-
-
-// Test
-// ====
-
 // A: Expected value: 17189
-// B: expected value: 13490
 i = 
 `A X
 B Z
