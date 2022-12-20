@@ -11,7 +11,7 @@
 
 // B: Golf starts here
 b=i=>i.split`
-`.reduce((y,x,k)=>[z=[...y[0],x.split``],y[1] + (k%3==2?(z.slice(-3).reduce((p, q) => p.filter(r => q.includes(r)))[0].charCodeAt()-38)%58:0)],[[],0])
+`.reduce((y,x,k)=>[z=[...y[0],x.split``],y[1] + (k%3==2?(z.slice(-3).reduce((p, q) => p.filter(r => q.includes(r)))[0].charCodeAt()-38)%58:0)],[[],0])[1]
 // Golf ends here
 
 
