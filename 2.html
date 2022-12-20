@@ -2,35 +2,30 @@
 
 // Day 2
 // =====
+
 /**
- * The sum of all scores must be computed. The scores are given by:
- *     | X | Y | Z
- * --- | - | - | -
- * A   | 4 | 8 | 3
- * B   | 1 | 5 | 9
- * C   | 7 | 2 | 6
+ * The score for a single game is the sum of:
+ * a) either 0, 3 or 6, depending on whether the second player lost, drew or won
+ * b) either 1, 2 or 3, depending on whether the second player played Rock, Paper or Scissors
  * 
- * Where A, B and C, and X, Y and Z represent Rock, Paper and Scissors respectively.
+ * We need to get the following values:
  * 
- * This 3x3 matrix can be rewritten as a 1x9 array:
- * X = [4, 8, 3, 1, 5, 9, 7, 2, 6]
- * 
- * We need to map the letters to the array indices. This can be done by using charCodes:
+ * Given that the charCodes are:
  * A = 65, B = 66, C = 67
  * X = 88, Y = 89, Z = 90
  * 
- * The index for "x y" can be computed as:
- * index(x,y) = 3*(x - 65) + (y - 88)
+ * The score for a single game can be computed as:
+ * score(x,y) = a(x,y) + b(y)
+ * with
+ * a(x,y) = (y-88 - (x-65) + 3) % 3 * 3
+ * b(y) = y-88 + 1
  * 
- * So, for example, the index for "A Y" is:
- * index(65, 89) = 3*(65 - 65) + (89 - 88) = 3*0 + 1 = 1
+ * In a(x,y), 3 is added to the difference between the second player's charCode and the first player's charCode to make sure that the result is always positive. 
+ * If not, the modulo operation would return a negative number if x > y. E.g. -2 for "C A".
  * 
- * And the value for "C X" is:
- * index(67, 88) = 3*(67 - 65) + (88 - 88) = 3*2 + 0 = 6
- * 
- * This equation can be simplified to:
- * index(x,y) = 3x + y - 283
- **/
+ * The expression (y-88 - (x-65) + 3) % 3 * 3 can be simplified to:
+ * a(x,y) = (y-x-1) % 3 * 3
+ */
 
 
 
