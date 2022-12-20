@@ -9,7 +9,7 @@
 
 // A: Golf starts here:
 a=i=>i.split`
-`.reduce((a,b)=>a+(((x=(b.split(/,|-/).map(c=>+c)))[0]-x[2])*(x[1]-x[3])<=0),0)
+`.reduce((a,b)=>a+(((x=(b.split(/,|-/)))[0]-x[2])*(x[1]-x[3])<=0),0)
 // Golf ends here
 
 // A: Expected value: 483
