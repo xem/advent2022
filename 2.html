@@ -34,9 +34,9 @@
 
 
 
-// A: Golf starts here: 82b.
+// A: Golf starts here: 81b.
 a=i=>i.split`
-`.reduce((s,x)=>+"483159726"[x[c=`charCodeAt`]()*3+x[c](2)-283]+s,0)
+`.reduce((s,x)=>(x[c=`charCodeAt`](2)-x[c]()-1)%3*3+x[c](2)-87+s,0)
 // Golf ends here
 
 
