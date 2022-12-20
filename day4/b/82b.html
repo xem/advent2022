@@ -19,12 +19,17 @@
  * (a - c) * (c - b) >= 0
  * 
  * or equivalently
- * (c - a) * (a - d) >= 0 or (a - c) * (c - b) >= 0
+ *      (c - a) * (a - d) >= 0 or (a - c) * (c - b) >= 0
+ * not  ((c - a) * (a - d) < 0) and ((a - c) * (c - b) < 0)
+ * not  ((c - a) * (a - d) < 0) and ((c - a) * (c - b) > 0)
+ * not  ((c - a) * (a - d)) * ((c - a) * (c - b)) < 0
+ *      ((a - d) * (c - b)) >= 0
+ * 
  */
 
 // B: Golf starts here:
 b=i=>i.split`
-`.reduce((a,b)=>a+(((y=((x=(b.split(/,|-/)))[2]-x[0]))*(x[0]-x[3])>=0)||(y*(x[2]-x[1])<=0)),0)
+`.reduce((a,b)=>a+(((x=(b.split(/,|-/)))[0]-x[3])*(x[2]-x[1])>=0),0)
 // Golf ends here
 
 // B: Expected value: 874
