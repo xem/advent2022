@@ -5,6 +5,17 @@
 
 /**
  * Check if a-b is contained in c-d or vice versa.
+ * 
+ * a-b is contained in c-d if:
+ * a-c <= 0 && b-d <= 0
+ * 
+ * similarily, c-d is contained in a-b if:
+ * c-a <= 0 && d-b <= 0 => a-c >= 0 && b-d >= 0
+ * 
+ * so the pairs are contained if the difference between their min and between their max have the same sign.
+ * 
+ * so if (a-c <= 0 && b-d <= 0) || (c-a <= 0 && d-b <= 0)
+ * which is the same as (a-c)*(b-d) <= 0
  */
 
 // A: Golf starts here:
