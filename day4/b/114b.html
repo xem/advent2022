@@ -24,7 +24,7 @@
 
 // B: Golf starts here:
 b=i=>i.split`
-`.reduce((a,b)=>a+((((x=(b.split(/,|-/)))[2]-x[0])*(x[0]-x[3])>=0)||((x[0]-x[2])*(x[2]-x[1])>=0)),0)
+`.reduce((a,b)=>a+(((y=((x=(b.split(/,|-/)))[2]-x[0]))*(x[0]-x[3])>=0)||(y*(x[2]-x[1])<=0)),0)
 // Golf ends here
 
 // B: Expected value: 874
@@ -1030,6 +1030,6 @@ i =
 70-90,19-79
 16-95,15-96`
 
-console.log(a(i));
+console.log(b(i));
 
 </script>
