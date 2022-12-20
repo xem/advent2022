@@ -1,6 +1,6 @@
 <script>
 
-// Day 3
+// Day 3a
 // =====
 
 /**
@@ -22,11 +22,6 @@
 a=i=>i.split`
 `.reduce((a,b)=>a+([...b].findLast(x=>b.indexOf(x)<b.length/2).charCodeAt()-38)%58,0)
 // Golf ends here
-
-// B: Golf starts here
-b=i=>0
-// Golf ends here
-
 
 // Test
 // ====
@@ -336,6 +331,5 @@ lZqjHlVRvRltLtRWFMtFLL
 qvjWzzvVbZpjqllggscdchwDrCphwsdhrD`
 
 console.log(a(i));
-console.log(b(i));
 
 </script>
