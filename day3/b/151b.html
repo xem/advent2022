@@ -10,9 +10,12 @@
  **/
 
 // B: Golf starts here
-b=i=>i.split`
-`.reduce((y,x,k)=>[z=[...y[0],x.split``],y[1] + (k%3==2?(z.slice(-3).reduce((p, q) => p.filter(r => q.includes(r)))[0].charCodeAt()-38)%58:0)],[[],0])[1]
+b=i=>i[s=`split`]`
+`.reduce((y,x,k)=>y+(++k%3?0:i[s]`
+`.slice(k-3,k).map(m=>m[s]``).reduce((p,q)=>p.filter(r=>q.includes(r)))[0].charCodeAt()-38)%58,0)
 // Golf ends here
+
+
 
 
 // Test
